@@ -1,0 +1,12 @@
+@tailwind base;
+@layer base {
+  h1 {
+    text-align: center;
+    @apply text-red-500;
+  }
+  a {
+    @apply text-teal-600;
+  }
+}
+@tailwind components;
+@tailwind utilities;
