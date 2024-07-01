@@ -2,7 +2,7 @@
   <div class="p-3">
     <NuxtPage/>
   </div>
-  <div class="bg-blue-400">
+  <div>
     <MistralComponent/>
   </div>
 

@@ -1,4 +1,11 @@
-﻿[Back home](/)
+﻿---
+title: "mimasiki"
+---
+
+# Mimasiki
+
+[Back home](/)
+
 
 <!-- ![cover](Aspose.Words.e07549ab-0365-47fe-9b62-2cdd47a68243.001.jpeg) -->
 

@@ -1,24 +1,29 @@
-// import { defineEventHandler } from 'h3';
+// import { defineEventHandler, readBody } from 'h3';
 // import MistralClient from '@mistralai/mistralai';
 
-// const apiKey = process.env.MISTRAL_API_KEY ;
+// const apiKey = process.env.MISTRAL_API_KEY;
 
 // const client = new MistralClient(apiKey);
 
 // export default defineEventHandler(async (event) => {
 //   try {
+//     const body = await readBody(event);
+//     const userMessage = body.message;
+
 //     const chatResponse = await client.chat({
 //       model: 'mistral-large-latest',
-//       messages: [{ role: 'user', content: '4 цитаты великих людей' }],
+//       response_format: { 'type': 'json_object' },
+//       messages: [{ role: 'user', content: userMessage }],
 //     });
-//     console.log('Chat:', chatResponse.choices[0].message.content);
-//     const chats = chatResponse.choices[0].message.content;
+
+//     console.log(chatResponse.choices[0].message.content);
 //     return { message: chatResponse.choices[0].message.content };
 //   } catch (error) {
-//     console.error('Ошибка API:', error);// added
+//     console.error('Ошибка API:', error);
 //     return { error: error.message };
 //   }
 // });
+
 import { defineEventHandler, readBody } from 'h3';
 import MistralClient from '@mistralai/mistralai';
 
