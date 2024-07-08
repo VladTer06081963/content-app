@@ -4,7 +4,7 @@
   <h1 class="h-7 text-center text-2xl">Запрос к Mistral</h1>
   <div class="bg-gray-700 text-center m-4 p-3">
     <form @submit.prevent="sendMessage">
-      <input v-model="userMessage" placeholder="Введите ваш вопрос" />
+      <input id="input" v-model="userMessage" placeholder="Введите ваш вопрос" />
       <button type="submit" class="text-white m-3">Отправить</button>
     </form>
     <!-- Кнопка для начала нового диалога -->
@@ -22,7 +22,7 @@
     <div v-for="(dialog, index) in history" :key="index">
       <h3>Диалог {{ index + 1 }}</h3>
       <div v-for="msg in dialog" :key="msg.question">
-        <p><strong>Вопрос:</strong> {{ msg.question }}</p>
+        <p class="text-red-500"><strong>Вопрос:</strong> {{ msg.question }}</p>
         <p><strong>Ответ:</strong> {{ msg.answer }}</p>
       </div>
     </div>

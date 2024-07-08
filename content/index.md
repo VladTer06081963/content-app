@@ -1,8 +1,8 @@
 # Nuxt Content
 
-[мимасики](/mimasiki)
-
-[primer](primer)
+[мимасики](/mimasiki)  
+[primer](/primer)  
+[my-page](/my-page)
 
 This page corresponds to the `/` route of your website. You can delete it or create another file in the `content/` directory.
 

@@ -12,4 +12,7 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true }
   }
+  // devServer: {
+  //   port: 4000 // Замените 4000 на нужный вам порт
+  // }
 })
