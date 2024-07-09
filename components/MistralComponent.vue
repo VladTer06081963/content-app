@@ -1,4 +1,4 @@
-<!-- components/MistralComponent.vue -->
+components/MistralComponent.vue
 
 <template>
   <h1 class="h-7 text-center text-2xl">Запрос к Mistral</h1>
@@ -37,8 +37,11 @@ const loader = ref(false);
 const error = ref(null);
 const messages = ref([]); // Текущий диалог
 const history = ref([]); // История диалогов
+const allMessages = ref([]); // Все сообщения текущего диалога
 
 const sendMessage = async () => {
+  if (userMessage.value.trim() === '') return;
+
   loader.value = true;
   error.value = null;
 
@@ -48,13 +51,15 @@ const sendMessage = async () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ message: userMessage.value }),
+      body: JSON.stringify({ messages: [...allMessages.value, { role: 'user', content: userMessage.value }] }),
     });
     const data = await response.json();
 
     if (response.ok) {
       if (data.message) {
-        messages.value.push({ question: userMessage.value, answer: data.message }); // Добавить вопрос и ответ в текущий диалог
+        const newMessage = { question: userMessage.value, answer: data.message };
+        messages.value.push(newMessage);
+        allMessages.value.push({ role: 'user', content: userMessage.value }, { role: 'assistant', content: data.message });
         userMessage.value = ''; // Очистить поле ввода после отправки сообщения
       } else {
         error.value = 'Не удалось получить сообщение от API.';
@@ -76,11 +81,15 @@ const startNewDialog = () => {
     history.value.push([...messages.value]); // Сохранить текущий диалог в историю
   }
   messages.value = []; // Обнуление массива текущего диалога
+  allMessages.value = []; // Обнуление массива всех сообщений
   error.value = null;
   userMessage.value = '';
 };
 </script>
 
+<style>
+/* Ваши стили */
+</style>
 <style>
 p {
   width: 600px;
