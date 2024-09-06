@@ -1,12 +1,11 @@
 <template>
+  <NuxtLayout />
   <div class="p-3">
-    <NuxtPage/>
+    <!-- <NuxtPage/> -->
   </div>
-  <div>
-    <MistralComponent/>
-  </div>
+  <!-- <MistralComponent />
 
-    <MyHello/>
+    <MyHello/> -->
 
 </template>
 <script setup>

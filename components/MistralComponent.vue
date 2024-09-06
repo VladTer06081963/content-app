@@ -3,12 +3,16 @@ components/MistralComponent.vue
 <template>
   <h1 class="h-7 text-center text-2xl">Запрос к Mistral</h1>
   <div class="bg-gray-700 text-center m-4 p-3">
-    <form @submit.prevent="sendMessage">
-      <input id="input" v-model="userMessage" placeholder="Введите ваш вопрос" />
-      <button type="submit" class="text-white m-3">Отправить</button>
-    </form>
+    <!-- <div> -->
+
+      <form @submit.prevent="sendMessage">
+        <input id="input" v-model="userMessage" placeholder="Введите ваш вопрос" 
+        />
+        <!-- <button type="submit" class="round-button text-white  m-3">^</button> -->
+      </form>
+    <!-- </div> -->
     <!-- Кнопка для начала нового диалога -->
-    <button @click="startNewDialog" class="text-white m-3">Начать новый диалог</button>
+    <button @click="startNewDialog" class="text-white m-3">New</button>
   </div>
   <!-- Лоадер -->
   <div v-if="loader" class="loader"></div>
@@ -87,16 +91,22 @@ const startNewDialog = () => {
 };
 </script>
 
+
 <style>
-/* Ваши стили */
-</style>
-<style>
+h1 {
+  text-align: center;
+  color: red;
+}
 p {
   width: 600px;
   margin: 50px auto;
   line-height: 170%;
   text-align: center;
   color: #b5b5bc;
+}
+
+a {
+  color: teal;
 }
 
 #message {

@@ -1,6 +1,6 @@
 <template>
     <div>
-      <a href="/">Home</a>
+      <!-- <a href="/">Home</a> -->
       <h1>{{ title }}</h1>
       
       <p class="text-yellow-400">{{ text }}</p>
@@ -9,6 +9,6 @@
   </template>
 
   <script setup>
-  const title = "primer"
+  const title = "primer-1"
   const text = "Это пример страницы с использованием Nuxt.Content!!!"
 </script>

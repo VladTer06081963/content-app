@@ -4,7 +4,7 @@ title: "my page"
 
 # Моя страница
 
-[Back home](/)
+<!-- [Back home](/) -->
 
 
 Пагинация

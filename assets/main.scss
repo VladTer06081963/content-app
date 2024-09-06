@@ -13,13 +13,13 @@
 
 @import 'tailwindcss/base';
 @layer base {
-  h1 {
-    text-align: center;
-    // @apply text-red-500;
-  }
-  a {
-    @apply text-teal-600;
-  }
+  // h1 {
+  //   text-align: center;
+  //   @apply text-red-500;
+  // }
+  // a {
+  //   @apply text-teal-600;
+  // }
 }
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -38,13 +38,13 @@ body {
 
 // ----------
 
-header {
-  background-color: #343541;
-  padding: 10px;
-}
-nav a :active {
-  color: red;
-}
+// header {
+//   background-color: #343541;
+//   padding: 10px;
+// }
+// nav a :active {
+//   color: red;
+// }
 
 // -----------
 
